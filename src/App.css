@@ -37,9 +37,33 @@
   }
 }
 
-.botonCarrito{
+.botonCarrito {
   width: 3rem;
   height: 3rem;
   margin-right: 16px;
   position: relative;
+}
+
+.tarjetas {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.card-img-top {
+  width: 18rem;
+}
+.nav-item {
+  color: white;
+  margin-left: 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-content: center;
+}
+
+.brand {
+  text-decoration: none;
+  color: white;
 }
