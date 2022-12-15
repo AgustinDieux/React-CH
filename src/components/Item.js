@@ -1,4 +1,4 @@
-const Producto = (props) => {
+const Item = (props) => {
   return (
     <div>
       <h1>{props.nombre}</h1>
@@ -9,4 +9,4 @@ const Producto = (props) => {
   );
 };
 
-export default Producto;
+export default Item;
