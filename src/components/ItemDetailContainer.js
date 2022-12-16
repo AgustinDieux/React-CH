@@ -49,7 +49,7 @@ const ItemDetailContainer = ({ greeting }) => {
     {
       id: 3,
       nombre: "Nike Huarache",
-      descripcion: "Sneaker super comodo",
+      descripcion: "Sneaker super comodo con mucho estilo",
       stock: "stock: 9",
       categoria: "Sneakers",
       img: "https://static.nike.com/a/images/t_PDP_144_v1/f_auto/gknnhy1nmwwbp7t6aeil/calzado-air-huarache-ultra-w8ToYLJb.png",
@@ -58,23 +58,21 @@ const ItemDetailContainer = ({ greeting }) => {
   console.log("id:", id);
   /* console.log("categories:", categories); */
 
-  const getProductos = () => {
+  // la función va a recibir por parámetro el id
+  const getProductos = (id) => {
     return new Promise((resolve, reject) => {
+      // y va a hacer una comparación con el método find
+      const prod = listadoProductos.find((p) => p.id === parseInt(id));
       setTimeout(() => {
-        listadoProductos.length > 0
-          ? resolve(
-              id
-                ? listadoProductos.filter((p) => p.nombre === id)
-                : listadoProductos
-            )
-          : reject("No hay datos");
+        listadoProductos.length > 0 ? resolve(prod) : reject("No hay datos");
       }, 500);
     });
   };
 
   //utilizando promise
   useEffect(() => {
-    getProductos()
+    // le pasamos por parámetros el parámetro que definiste en useParams.
+    getProductos(id)
       .then((res) => setProductos(res))
       .catch((err) => console.log(err));
   }, [id]);
