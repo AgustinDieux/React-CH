@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 
-const ItemDetailContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const { id } = useParams();
   const listadoProductos = [
@@ -64,7 +64,7 @@ const ItemDetailContainer = ({ greeting }) => {
         listadoProductos.length > 0
           ? resolve(
               id
-                ? listadoProductos.filter((p) => p.categoria === id)
+                ? listadoProductos.filter((p) => p.nombre === id)
                 : listadoProductos
             )
           : reject("No hay datos");
@@ -93,4 +93,4 @@ const ItemDetailContainer = ({ greeting }) => {
   );
 };
 
-export default ItemDetailContainer;
+export default ItemListContainer;
