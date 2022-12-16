@@ -65,14 +65,17 @@ const ItemListContainer = ({ greeting }) => {
       ],
     },
   ];
+  console.log("id:", id);
+  console.log("categories:", categories);
   const products = id
-    ? categories.find((categories) => categories.id === id)?.products
+    ? categories.find((categories) => categories.id === id)?.products || []
     : [];
+
   console.log(products);
   return (
     <div>
       <h1>Welcome to {greeting}</h1>
-      <ItemList Productos={products} />
+      <ItemList Productos={products} id={id} />
     </div>
   );
 };

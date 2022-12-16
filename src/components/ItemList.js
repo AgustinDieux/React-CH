@@ -3,10 +3,11 @@ import Item from "./Item";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const ItemList = (Productos) => {
+const ItemList = ({ Productos, id }) => {
+  const filteredProducts = Productos.filter((product) => product.id === id);
   return (
     <div className="row">
-      {Productos.map((producto) => {
+      {filteredProducts.map((producto) => {
         return (
           <div>
             <Item

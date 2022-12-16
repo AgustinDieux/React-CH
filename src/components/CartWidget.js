@@ -1,7 +1,7 @@
 export const CartWidget = () => {
   return (
     <div>
-      <button class="botonCarrito">
+      <button className="botonCarrito">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -16,7 +16,7 @@ export const CartWidget = () => {
           3
         </div>
       </button>
-      <i class="bi bi-cart2"></i>
+      <i className="bi bi-cart2"></i>
     </div>
   );
 };
