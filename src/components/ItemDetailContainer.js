@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
 import { useEffect, useState } from "react";
 
-const ItemListContainer = ({ greeting }) => {
-  const [productos, setProductos] = useState([]);
+const ItemDetailContainer = ({ greeting }) => {
+  const [productos, setProductos] = useState({});
   const { id } = useParams();
   const listadoProductos = [
     {
@@ -88,9 +88,9 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div>
       <h1>Welcome to {greeting}</h1>
-      <ItemList Productos={productos} id={id} />
+      <ItemDetail Productos={productos} id={id} />
     </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

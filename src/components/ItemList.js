@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ItemList = ({ Productos }) => {
   return (
-    <div className="row">
+    <div className="cards">
       {Productos.map((producto) => {
         return (
           <div>
@@ -16,7 +16,7 @@ const ItemList = ({ Productos }) => {
               descripcion={producto.descripcion}
               stock={producto.stock}
             />
-            <Link to={`${producto.id}`}>Ir al sneaker</Link>
+            <Link to={`/item/${producto.id}`}>Ir al sneaker</Link>
           </div>
         );
       })}

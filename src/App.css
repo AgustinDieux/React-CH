@@ -67,3 +67,12 @@
   text-decoration: none;
   color: white;
 }
+
+.cards {
+  display: flex;
+  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 16px;
+}
