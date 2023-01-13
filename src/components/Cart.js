@@ -3,15 +3,8 @@ import { CartContext } from "./cartContext";
 import CheckoutForm from "./CheckoutForm";
 
 const Cart = () => {
-  const { cart, clearCart } = useContext(CartContext);
+  const { cart, clearCart, calculateTotal } = useContext(CartContext);
   //Aquí se agrega la función para calcular el total
-  const calculateTotal = () => {
-    let total = 0;
-    cart.forEach((item) => {
-      total += item.product.precio * item.quantity;
-    });
-    return total;
-  };
 
   return (
     <div>

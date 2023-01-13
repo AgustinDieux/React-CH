@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Sneaker Shop - Eccomerce realizado bajo el marco de Coder House.
+El proyecto fue creado con Create React App.
+
+INFO
+SneakerShop es un eccomerce que ofrece productos de indumentaria.
+
+Tiene la posibilidad de listar estos productos, poder acceder a la vista unitaria y añadirlos al carrito.
+
+Dentro del carrito el usuario puede realizar la compra completando un formulario para poder guardar la orden. (con los datos del producto y del usuario)
+
+Proximamente mercado pago…
+
+HERRAMIENTAS
+Se utilizo React JS para realizar todo el front-end.
+
+Dentro del proyecto se hace uso de los Hooks y del Context.
+
+Logramos visualizar estos productos, vinculando nuestro proyecto con Firebase, al igual que al crear ordenes de compras (Firestore).

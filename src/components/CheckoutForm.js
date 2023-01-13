@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import React, { useState } from "react";
+import { getFirestore, collection, addDoc, doc } from "firebase/firestore";
+import React, { useContext, useState } from "react";
+import CartContext from "./cartContext";
 
 const CheckoutForm = () => {
   const [name, setName] = useState("");
@@ -10,7 +10,7 @@ const CheckoutForm = () => {
   const [emailConfirmation, setEmailConfirmation] = useState("");
   const [emailValid, setEmailValid] = useState(false);
   const [orderId, setOrderId] = useState(""); // nuevo estado para guardar el ID de la orden
-
+  const { cart, clearCart, calculateTotal } = useContext(CartContext);
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -39,18 +39,19 @@ const CheckoutForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Agregar la orden a Firestore
-    firebase
-      .firestore()
-      .collection("orders")
-      .add({
-        name: name,
-        lastName: lastName,
-        telephone: telephone,
-        email: email,
-      })
-      .then((docRef) => {
-        setOrderId(docRef.id); // guardar el ID de la orden
-      });
+    let orden = {
+      user: { name, lastName, telephone, email },
+      cart: cart,
+      date: new Date(),
+      total: calculateTotal(),
+    };
+    const db = getFirestore();
+    const venta = collection(db, "orders");
+    addDoc(venta, orden).then((docRef) => {
+      alert("su orden de compra es: " + docRef.id);
+      setOrderId(docRef.id); // guardar el ID de la orden
+      clearCart();
+    });
   };
 
   return (
