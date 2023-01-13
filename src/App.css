@@ -66,6 +66,7 @@
 .brand {
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 
 .cards {
@@ -75,4 +76,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin: 16px;
+}
+
+.botonvm {
+  margin-left: 10px;
 }
